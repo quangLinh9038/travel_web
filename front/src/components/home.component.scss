@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.video {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    .introvideo {
+        width: 70%;
+        height: 592px;
+        border-radius: 1000px;
+    }
+    .subtitle{
+        font-size: 30px;
+        padding: 11px 0px;
+        font-family: "Lobster", cursive;
+        color: white;
+        // font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+}
+
+.content {
+    padding: 5px 50px;
+    vertical-align: bottom;
+    strong {
+        padding: 50px;
+        display: block;
+        font-family: "Lobster", cursive;
+        letter-spacing: 5px;
+        font-size: 50px;
+    }
+    .picture {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 40px;
+        grid-row-gap: 80px;
+        cursor: pointer;
+        .pic-content {
+            display: grid;
+            grid-template-columns: 1px 1px;
+            .polaroid {
+                width: 310px;
+                padding: 10px 10px 20px 10px;
+                border: 1px solid #bfbfbf;
+                background-color: white;
+                box-shadow: 10px 10px 5px #aaaaaa;
+                text-align: center;
+                font-weight: 100;
+                font-family: "Lobster", cursive;
+                img:hover{
+                    transition: all 1s;
+                    transform: all translate(10px);
+                }
+            }
+            .rotate_right {
+                transform: rotate(7deg);
+            }
+            .rotate_left {
+                transform: rotate(-8deg);
+            }
+        }
+        .pic-content:active{
+            display: grid;
+            z-index: 1;
+            justify-content:space-between;
+            
+        }
+    }
+}

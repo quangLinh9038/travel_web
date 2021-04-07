@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.notification {
+    background-color: #222222;
+    color: #9ea0a2;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: "Marko One", serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    overflow-x: hidden;
+    cursor: pointer;
+    .first {
+        position: relative;
+        animation: banner 20s infinite;
+    }
+}
+@keyframes banner {
+    from {
+        left: -450px;
+    }
+    to {
+        left: 1650px;
+    }
+}
+
+.navbar {
+    transition: all 0.75s !important;
+    background-color: black;
+    .navbar-brand {
+        font-family: "Lobster", cursive;
+        font-size: 25px;
+        letter-spacing: 1px;
+        padding: 10px 50px;
+        margin: 0px;
+    }
+    .nav-item {
+        margin: 0px;
+        font-family: "Marko One", serif;
+    }
+    .loginbutton {
+        padding-left: 70%;
+    }
+    .language {
+        position: absolute;
+        right: 200px;
+        i {
+            color: rgba(255,255,255,.5);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 25px;
+        }
+        border-radius: 50px;
+        background-color: transparent;
+        border: none;
+
+        :hover {
+            // background-color: #9ea0a2;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.navbar.active {
+    background-color: white;
+    transition: all 0.75s !important;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 12px !important;
+    .navbar-brand {
+        color: red;
+    }
+    .nav-link {
+        color: black;
+    }
+    .nav-link:hover{
+        color: rgb(170, 170, 170)!important;
+    }
+    .language{
+        i{
+            color: black;
+        }
+        i:hover{
+            color: rgb(170, 170, 170);
+        }
+    }
+}
+
+.body {
+    margin: 0px;
+    padding: 0px;
+}
