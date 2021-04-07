@@ -1,6 +1,6 @@
 
 
-##Rroject Name
+##Project Name
 ================
 
 This project is built based on instructions from Software Engineering: Process & Tools course in order to develop a online appointment booking can be used for multiple businesses. It contains a fullstack web application with appropriate technologies, processes and tools. 
