@@ -22,6 +22,8 @@ app.use(fileUpload({
 
 //Routes
 app.use('/api', require('./routes/category.routes'))
+app.use('/api', require('./routes/city.routes'))
+app.use('/api', require('./routes/upload'))
 
 const db = require('./models');
 
