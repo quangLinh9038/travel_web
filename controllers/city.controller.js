@@ -1,4 +1,5 @@
 const City = require('../models/city.model')
+const Place = require('../models/place.model')
 
 const cityCtrl = {
     getCities: async(req, res) =>{
@@ -29,14 +30,18 @@ const cityCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    // deleteCity: async(req, res) =>{
-    //     try {
-    //         await City.findByIdAndDelete(req.params.id)
-    //         res.json({msg: "Deleted a city"})
-    //     } catch (err) {
-    //         return res.status(500).json({msg: err.message})
-    //     }
-    // },
+    deleteCity: async(req, res) =>{
+        try {
+            const place = await Place.findOne({city: req.params.id})
+            if(place) return res.status(400).json({
+                msg: "Please delete all places with a relationship."
+            })
+            await City.findByIdAndDelete(req.params.id)
+            res.json({msg: "Deleted a city"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
     updateCity: async(req, res) =>{
         try {
             const {name, description, images, lat, lng} = req.body;

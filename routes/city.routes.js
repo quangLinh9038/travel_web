@@ -7,7 +7,7 @@ router.route("/city")
     .post([authJwt.verifyToken, authJwt.isAdmin], cityCtrl.createCity)
 
 router.route('/city/:id')
-//     .delete([authJwt.verifyToken, authJwt.isAdmin], categoryCtrl.deleteCategory)
+    .delete([authJwt.verifyToken, authJwt.isAdmin], cityCtrl.deleteCity)
     .put([authJwt.verifyToken, authJwt.isAdmin], cityCtrl.updateCity)
 
 module.exports = router
