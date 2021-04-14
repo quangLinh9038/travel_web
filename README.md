@@ -1,6 +1,6 @@
 
 
-##Project Name
+##Trip Planner Application - VNomad 
 ================
 
 <Project Short Description>
