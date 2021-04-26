@@ -7,7 +7,7 @@ router.route("/category")
     .post([authJwt.verifyToken, authJwt.isAdmin], categoryCtrl.createCategory)
 
 router.route('/category/:id')
-//     .delete([authJwt.verifyToken, authJwt.isAdmin], categoryCtrl.deleteCategory)
+    .delete([authJwt.verifyToken, authJwt.isAdmin], categoryCtrl.deleteCategory)
     .put([authJwt.verifyToken, authJwt.isAdmin], categoryCtrl.updateCategory)
 
 module.exports = router
