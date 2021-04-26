@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
@@ -23,7 +23,8 @@ class App extends Component {
       showAdminBoard: false,
       currentUser: undefined,
       navbarChange: false,
-      language:false,
+      language: false,
+      loggedIn: false,
     };
   }
 
@@ -54,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser, showModeratorBoard, showAdminBoard, navbarChange } = this.state;
+    const { currentUser, showModeratorBoard, showAdminBoard, navbarChange, language, loggedIn } = this.state;
 
     return (
       <div >
@@ -67,19 +68,24 @@ class App extends Component {
 
 
         <nav className={navbarChange ? "navbar navbar-expand sticky-top active" : "navbar navbar-expand navbar-dark sticky-top"} >
-          <div className="navbar-brand">
-            VNomad
-          </div>
 
-          <button className='button language' >
-            <i class="fa fa-language"></i>
-          </button>
+          <div className="navbar-brand">
+            VNomad <i style={{ color: 'red' }} className='fa fa-map-marker' />
+          </div>
 
           <div className="navbar-nav">
             {!currentUser && (
               <li className="nav-item">
                 <Link to={"/"} className="nav-link">
                   Home
+                </Link>
+              </li>
+            )}
+
+            {!currentUser && (
+              <li className="nav-item">
+                <Link className="nav-link" data-toggle='modal' data-target='#ln' >
+                  Plan
                 </Link>
               </li>
             )}
@@ -110,37 +116,74 @@ class App extends Component {
           </div>
 
           <div className='loginbutton'>
+
             {currentUser ? (
               <div className="navbar-nav">
+
+                <button className='button language' >
+                  <i class="fa fa-language"></i>
+                </button>
+
                 <li className="nav-item">
                   <Link to={"/profile"} className="nav-link">
                     {currentUser.username}
                   </Link>
                 </li>
+
                 <li className="nav-item">
                   <a href="/login" className="nav-link" onClick={this.logOut}>
                     LogOut
-                </a>
+                  </a>
                 </li>
+
               </div>
             ) : (
               <div className="navbar-nav">
+
+                <button className='button language' >
+                  <i class="fa fa-language"></i>
+                </button>
+
                 <li className="nav-item">
-                  <Link to={"/login"} className="nav-link">
+                  <Link to={"/login"} target='_blank' className="nav-link">
                     Login
-                </Link>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/register"} className="nav-link">
+                  <Link to={"/register"} target='_blank' className="nav-link">
                     Register
-                </Link>
+                  </Link>
                 </li>
+
               </div>
             )}
           </div>
-
         </nav>
+
+        <div className='modal fade' id='ln'>
+          <div className='modal-dialog modal-dialog-centered'>
+            <div className='modal-content'>
+
+              <div className='modal-header'>
+                <button type='button' className='close' data-dismiss='modal'>&times;</button>
+              </div>
+
+              <div className='modal-body'>
+                You need to login to use this function!
+              </div>
+
+              <div className='modal-footer'>
+                <button className='btn btn-primary' data-dismiss='modal' onClick={() => { this.setState({ loggedIn: true }) }}>
+                  OK
+                </button>
+                {loggedIn && (
+                  <Redirect to={'/login'} target='_blank'/>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="body">
           <Switch>

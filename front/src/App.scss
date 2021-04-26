@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    
 }
 
 .notification {
@@ -14,42 +15,36 @@
     font-family: "Marko One", serif;
     font-weight: bold;
     letter-spacing: 3px;
-    overflow-x: hidden;
+    overflow: hidden;
     cursor: pointer;
-    .first {
-        position: relative;
-        animation: banner 20s infinite;
-    }
+    text-align: center;
 }
-@keyframes banner {
-    from {
-        left: -450px;
-    }
-    to {
-        left: 1650px;
-    }
-}
-
 .navbar {
     transition: all 0.75s !important;
     background-color: black;
+    overflow: hidden;
     .navbar-brand {
         font-family: "Lobster", cursive;
         font-size: 25px;
         letter-spacing: 1px;
         padding: 10px 50px;
         margin: 0px;
+        display: flex;
+        i {
+            margin-left: 8px;
+            transform: rotate(15deg);
+        }
     }
     .nav-item {
         margin: 0px;
         font-family: "Marko One", serif;
     }
     .loginbutton {
-        padding-left: 70%;
+        margin-left:auto;
     }
     .language {
-        position: absolute;
-        right: 200px;
+        // position: absolute;
+        // right: 200px;
         i {
             color: rgba(255,255,255,.5);
             font-weight: bold;
@@ -73,6 +68,7 @@
     background-color: white;
     transition: all 0.75s !important;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 12px !important;
+    overflow: hidden;
     .navbar-brand {
         color: red;
     }
@@ -95,4 +91,13 @@
 .body {
     margin: 0px;
     padding: 0px;
+}
+
+.modal{
+    
+    .modal-body{
+        text-align: center;
+        font-size: 20px;
+        font-family: "Marko One", serif;
+    }
 }
