@@ -4,7 +4,7 @@ import Input from 'react-validation/build/input'
 import CheckButton from 'react-validation/build/button'
 import { isEmail } from "validator";
 import AuthService from '../services/auth.service'
-
+import './register.component.scss'
 const required = value => {
     if (!value) {
         return (
@@ -60,6 +60,15 @@ export default class Register extends React.Component {
             successful: false,
             message: ''
         }
+    }
+
+    componentDidMount() {
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.innerHTML = `
+              <span></span>
+              <span>${btn.textContent}</span>
+            `
+        })
     }
 
     onChangeUsername(e) {
@@ -118,35 +127,41 @@ export default class Register extends React.Component {
 
     render() {
         return (
-            <div className='col-md-12'>
-                <div className='card card-container'>
+            <div className='register'>
+                <div className='card'>
+                    <h3 className="title">SIGN UP</h3>
+                    <div className="borderbottom"></div>
                     <Form onSubmit={this.handleRegister} ref={c => { this.form = c }}>
                         {!this.state.successful && (
                             <div>
                                 <div className='form-group'>
-                                    <label htmlFor="username">Username</label>
+                                    {/* <label htmlFor="username">Username</label> */}
                                     <Input type='text' className='form-control' name='username'
                                         value={this.state.username} onChange={this.onChangeUsername}
+                                        placeholder='Username'
                                         validations={[required, usernameLength]}
                                     />
                                 </div>
                                 <div className='form-group'>
-                                    <label htmlFor="email">Email</label>
+                                    {/* <label htmlFor="email">Email</label> */}
                                     <Input type='text' className='form-control' name='email'
                                         value={this.state.email} onChange={this.onChangeEmail}
+                                        placeholder='Email'
                                         validations={[required, email]}
                                     />
                                 </div>
                                 <div className='form-group'>
-                                    <label htmlFor="password">Password</label>
+                                    {/* <label htmlFor="password">Password</label> */}
                                     <Input type='password' className='form-control' name='password'
                                         value={this.state.password} onChange={this.onChangePassword}
+                                        placeholder='Password'
                                         validations={[required, passwordLength]}
                                     />
                                 </div>
 
+                                <div className="borderbottom"></div>
                                 <div className='form-group'>
-                                    <button className='btn btn-primary btn-block'>Sign Up</button>
+                                    <button className='btn btn-primary'>REGISTER</button>
                                 </div>
                             </div>
                         )}
