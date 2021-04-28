@@ -2,10 +2,10 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    
 }
 
 .notification {
+    // position: fixed;
     background-color: #222222;
     color: #9ea0a2;
     padding-top: 15px;
@@ -20,9 +20,15 @@
     text-align: center;
 }
 .navbar {
-    transition: all 0.75s !important;
-    background-color: black;
+    transition: all 1.25s !important;
+    background-color: transparent;
     overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    // border-bottom: 2px solid black;
+    // box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 12px !important;
     .navbar-brand {
         font-family: "Lobster", cursive;
         font-size: 25px;
@@ -30,27 +36,34 @@
         padding: 10px 50px;
         margin: 0px;
         display: flex;
+        color: red;
         i {
             margin-left: 8px;
             transform: rotate(15deg);
         }
+    }
+    .nav-link {
+        color: grey;
+    }
+    .nav-link:hover {
+        color: rgb(170, 170, 170) !important;
     }
     .nav-item {
         margin: 0px;
         font-family: "Marko One", serif;
     }
     .loginbutton {
-        margin-left:auto;
+        margin-left: auto;
     }
     .language {
         // position: absolute;
         // right: 200px;
         i {
-            color: rgba(255,255,255,.5);
             font-weight: bold;
             padding: 10px 15px;
             border-radius: 50px;
             font-size: 25px;
+            color: grey;
         }
         border-radius: 50px;
         background-color: transparent;
@@ -58,7 +71,7 @@
 
         :hover {
             // background-color: #9ea0a2;
-            color: white;
+            color: rgb(170, 170, 170) !important;
             cursor: pointer;
         }
     }
@@ -66,23 +79,24 @@
 
 .navbar.active {
     background-color: white;
-    transition: all 0.75s !important;
+    transition: all 1.25s !important;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 12px !important;
     overflow: hidden;
+    position:fixed;
     .navbar-brand {
         color: red;
     }
     .nav-link {
         color: black;
     }
-    .nav-link:hover{
-        color: rgb(170, 170, 170)!important;
+    .nav-link:hover {
+        color: rgb(170, 170, 170) !important;
     }
-    .language{
-        i{
+    .language {
+        i {
             color: black;
         }
-        i:hover{
+        i:hover {
             color: rgb(170, 170, 170);
         }
     }
@@ -93,9 +107,8 @@
     padding: 0px;
 }
 
-.modal{
-    
-    .modal-body{
+.modal {
+    .modal-body {
         text-align: center;
         font-size: 20px;
         font-family: "Marko One", serif;

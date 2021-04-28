@@ -12,6 +12,8 @@ import Profile from "./components/profile.component";
 import Guest from './components/board-guest.component';
 import Member from './components/board-member.component';
 import Admin from './components/board-admin.component';
+import Plan from "./components/plan.component";
+import Loading from "./components/loading.component";
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class App extends Component {
       navbarChange: false,
       language: false,
       loggedIn: false,
+      loading: false,
     };
   }
 
@@ -47,7 +50,7 @@ class App extends Component {
   }
 
   changeNavbarColor = () => {
-    if (window.scrollY >= 720) {
+    if (window.scrollY >= 1) {
       this.setState({ navbarChange: true })
     } else {
       this.setState({ navbarChange: false })
@@ -55,20 +58,19 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser, showModeratorBoard, showAdminBoard, navbarChange, language, loggedIn } = this.state;
+    const { currentUser, showModeratorBoard, showAdminBoard, navbarChange, loading, language, loggedIn } = this.state;
 
     return (
       <div >
 
-        <div className='notification'>
+        {/* <div className='notification'>
           <span className='first'>
             Get the latest on our COVID-19 response
           </span>
-        </div>
+        </div> */}
 
 
-        <nav className={navbarChange ? "navbar navbar-expand sticky-top active" : "navbar navbar-expand navbar-dark sticky-top"} >
-
+        <nav className={navbarChange ? "navbar navbar-expand sticky-top active" : "navbar navbar-expand sticky-top"} >
           <div className="navbar-brand">
             VNomad <i style={{ color: 'red' }} className='fa fa-map-marker' />
           </div>
@@ -94,6 +96,14 @@ class App extends Component {
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   Home
+                </Link>
+              </li>
+            )}
+
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={'/plan'} className='nav-link' >
+                  Plan
                 </Link>
               </li>
             )}
@@ -161,6 +171,8 @@ class App extends Component {
           </div>
         </nav>
 
+
+
         <div className='modal fade' id='ln'>
           <div className='modal-dialog modal-dialog-centered'>
             <div className='modal-content'>
@@ -178,7 +190,7 @@ class App extends Component {
                   OK
                 </button>
                 {loggedIn && (
-                  <Redirect to={'/login'} target='_blank'/>
+                  <Redirect to={'/login'} />
                 )}
               </div>
             </div>
@@ -194,6 +206,8 @@ class App extends Component {
             <Route path="/user" component={Guest} />
             <Route path="/member" component={Member} />
             <Route path="/admin" component={Admin} />
+            <Route path="/plan" component={Plan} />
+            <Route path="/loading" component={Loading} />
           </Switch>
         </div>
       </div>
