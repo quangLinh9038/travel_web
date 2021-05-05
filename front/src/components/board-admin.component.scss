@@ -1,0 +1,151 @@
+.admin-page {
+    .top {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 150px;
+        .title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .row {
+            // column-gap: 10px;
+            // border: 2px solid black;
+            border-radius: 30px 0px 0px 30px;
+            margin: 15px;
+            .col-4 {
+                // border: 2px solid black;
+                // margin: 10px;
+                border-radius: 30px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                // position: fixed;
+                .input-form-place {
+                    .place-form-title {
+                        text-align: center;
+                        font-weight: bold;
+                        font-style: italic;
+                        font-size: 20px;
+                        margin: 5px auto;
+                    }
+                    .input-form {
+                        .input {
+                            display: grid;
+                            grid-template-columns: repeat(2, auto);
+                            grid-gap: 10px;
+                            input {
+                                border-radius: 10px;
+                                padding: 10px;
+                                box-shadow: rgba(0, 0, 0, 0.08) 12px 12px 12px !important;
+                                border: 0px;
+                            }
+                        }
+                        .textarea {
+                            margin-top: 10px;
+                            textarea {
+                                border-radius: 10px;
+                                padding: 10px;
+                                box-shadow: rgba(0, 0, 0, 0.08) 12px 12px 12px !important;
+                                border: 0px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .button {
+                        display: flex;
+                        justify-content: space-around;
+                        margin: 10px 0;
+                        
+                        .submit {
+                            text-align: center;
+                            
+                            border-radius: 20px;
+                            border: none;
+                            background-color: #1771e6;
+                            font-weight: bold;
+                            color: white;
+                            font-size: 15px;
+                            padding: 10px 20px;
+                            // float: right;
+                            box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px !important;
+                            margin-right: 10px;
+                           
+                        }
+                    }
+                }
+            }
+
+            .col-8 {
+                // border: 2px solid black;
+                border-left: 0px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                height: 450px;
+                .place {
+                    display: grid;
+                    grid-template-columns: repeat(4, 22.8%);
+                    grid-gap: 30px;
+                    .card-deck {
+                        // padding: 5px;
+                        .card {
+                            border: 0px;
+                        }
+                        .card-image {
+                            overflow: hidden;
+                            border: 2px solid black;
+                            border-radius: 10px;
+                            img {
+                                width: 100%;
+                                height: 150px;
+                                object-fit: cover;
+                            }
+                            img:hover {
+                                transform: scale(1.2);
+                                transition: 0.5s ease-in-out;
+                            }
+                        }
+                        .card-body {
+                            padding: 0px;
+                            strong {
+                                // font-size: 19px;
+                                font-style: italic;
+                            }
+                        }
+
+                        .button {
+                            display: flex;
+                            justify-content: space-around;
+                            margin-bottom: 10px;
+                            .update {
+                                text-align: center;
+
+                                border-radius: 20px;
+                                border: none;
+                                background-color: #1771e6;
+                                font-weight: bold;
+                                color: white;
+                                font-size: 15px;
+                                padding: 10px 20px;
+                                // float: right;
+                                box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px !important;
+                                margin-right: 10px;
+                            }
+                            .delete {
+                                text-align: center;
+
+                                border-radius: 20px;
+                                border: none;
+                                background-color: #1771e6;
+                                font-weight: bold;
+                                color: white;
+                                font-size: 15px;
+                                padding: 10px 20px;
+                                // float: right;
+                                box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px !important;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
