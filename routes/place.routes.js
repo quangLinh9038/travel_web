@@ -4,10 +4,10 @@ const { authJwt } = require("../middlewares")
 
 router.route("/place")
     .get(placeCtrl.getPlaces)
-    .post([authJwt.verifyToken, authJwt.isAdmin], placeCtrl.createPlace)
+    .post(placeCtrl.createPlace)
 
 router.route('/place/:id')
-    .delete([authJwt.verifyToken, authJwt.isAdmin], placeCtrl.deletePlace)
-    .put([authJwt.verifyToken, authJwt.isAdmin], placeCtrl.updatePlace)
+    .delete(placeCtrl.deletePlace)
+    .put(placeCtrl.updatePlace)
 
 module.exports = router

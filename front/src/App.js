@@ -14,6 +14,8 @@ import Member from './components/board-member.component';
 import Admin from './components/board-admin.component';
 import Plan from "./components/plan.component";
 import Loading from "./components/loading.component";
+import DetailPlace from "./components/detailPlace.component";
+import { GoogleMap } from "./components/google-map.component";
 
 class App extends Component {
   constructor(props) {
@@ -87,7 +89,7 @@ class App extends Component {
             {!currentUser && (
               <li className="nav-item">
                 <Link className="nav-link" data-toggle='modal' data-target='#ln' >
-                  Plan
+                  Discover
                 </Link>
               </li>
             )}
@@ -102,8 +104,8 @@ class App extends Component {
 
             {currentUser && (
               <li className="nav-item">
-                <Link to={'/plan'} className='nav-link' >
-                  Plan
+                <Link to={'/discover'} className='nav-link' >
+                  Discover
                 </Link>
               </li>
             )}
@@ -206,8 +208,10 @@ class App extends Component {
             <Route path="/user" component={Guest} />
             <Route path="/member" component={Member} />
             <Route path="/admin" component={Admin} />
-            <Route path="/plan" component={Plan} />
+            <Route path="/discover" component={Plan} />
             <Route path="/loading" component={Loading} />
+            <Route path='/map' component={GoogleMap} />
+            <Route path="/detail/:_id" render={(props) => <DetailPlace {...props} />} />
           </Switch>
         </div>
       </div>
