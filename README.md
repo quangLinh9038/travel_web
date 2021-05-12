@@ -10,7 +10,9 @@
 
 
 ## Tools 
-
+- MERN stack 
+- Cloudinary 
+- Google Map API
   
 ## Installation
 
@@ -54,7 +56,7 @@ Locally installation
 
 ## Credits
 
-- Group 2 
+- Group 22
   - Nguyen Quang Linh 
   - Nguyen Thanh Dat
   - Le Gia Thuan
