@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import AuthService from '../services/auth.service'
+import './profile.component.scss'
+import Footer from './footer.component'
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -12,32 +14,48 @@ export default class Profile extends React.Component {
     render() {
         const { currentUser } = this.state;
         return (
-            <div className='container'>
-                <header className='jumbotron'>
-                    <h3>
-                        <strong>{currentUser.username}</strong>
-                    </h3>
-                </header>
-                <p>
-                    <strong>Token:</strong>{" "}
-                    {currentUser.accessToken.substring(0, 20)} ...{" "}
-                    {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-                </p>
+            <div className='profile'>
+                <div className="row">
+                    <div className="col-3">
+                        <div className="card">
+                            <img src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Tynan-Allan.jpeg" alt="" />
+                            <div className="card-header">
+                                <h2>
+                                    <strong>{currentUser.username}</strong>
+                                </h2>
+                            </div>
 
-                <p>
-                    <strong>ID:</strong>{" "}
-                    {currentUser.id}
-                </p>
+                            <div className="container">
+                                <p>
+                                    <strong>Token:</strong>{" "}
+                                    {currentUser.accessToken.substring(0, 15)} ...{" "}
+                                    {currentUser.accessToken.substr(currentUser.accessToken.length - 10)}
+                                </p>
 
-                <strong>Authorities:</strong>
-                <ul>
-                    {currentUser.roles && currentUser.roles.map((role, i) =>
-                        <li key={i}>
-                            {role}
-                        </li>
-                    )}
-                </ul>
+                                <p>
+                                    <strong>ID:</strong>{" "}
+                                    {currentUser.id}
+                                </p>
+
+
+                                <ul>
+                                    <strong>Authorities:</strong>
+                                    {currentUser.roles && currentUser.roles.map((role, i) =>
+                                        <li key={i}>
+                                            {role}
+                                        </li>
+                                    )}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-9">
+
+                    </div>
+                </div>
+                <Footer />
             </div>
+
         )
     }
 }
