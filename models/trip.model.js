@@ -2,12 +2,6 @@ const mongoose = require('mongoose')
 
 
 const tripSchema = new mongoose.Schema({
-    trip_id:{
-        type: String,
-        unique: true,
-        trim: true,
-        required: true
-    },
     title:{
         type: String,
         trim: true,
@@ -19,6 +13,10 @@ const tripSchema = new mongoose.Schema({
     },
     place:{
         type: Object,
+        required: true
+    },
+    email:{
+        type: String,
         required: true
     },
     note:{
