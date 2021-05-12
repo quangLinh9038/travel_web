@@ -16,17 +16,30 @@
 
 Locally installation
 
+ - Backend app: 
+   Make sure that you have node.js and npm package installed
    ```
- - Front-end: 
-   - Make sure that you have node.js and npm
-   - cd resource/sept-front
-   - run App.js in terminal
+   cd server.js
    ```
-   npm install
+   ```
+   npm install 
+   ```
+   ```
+   npm run dev
+   ```
+- Frontend app: 
+  ```
+  cd front/src/App.js
+  ```
   
-   npm start
-   ```
-
+  ```
+  npm install
+  ```
+  
+  ```
+  npm start
+  ```
+  
 ## Contributing
 
 1. Fork it!
@@ -37,12 +50,11 @@ Locally installation
 
 ## History
 
-- Release tags:
-
+- Release tags: v1.0 
 
 ## Credits
 
-- Group 7: 
+- Group 2 
   - Nguyen Quang Linh 
   - Nguyen Thanh Dat
   - Le Gia Thuan
