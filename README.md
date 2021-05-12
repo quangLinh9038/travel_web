@@ -1,6 +1,6 @@
 
 
-##Trip Planner Application - VNomad 
+## Trip Planner Application - VNomad 
 ================
 
 <Project Short Description>
