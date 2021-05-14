@@ -11,10 +11,12 @@ const tripSchema = new mongoose.Schema({
         type: Object,
         required: true
     },
-    place:{
-        type: Object,
-        required: true
-    },
+    place:[
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Place'
+        }
+    ],
     email:{
         type: String,
         required: true
